@@ -7,7 +7,7 @@ Dockerfile
 
 # Ignore Git-related files
 .git/
-
+.gitignore
 # Ignore specific .env files in the same directory
 .env
 .env.example
