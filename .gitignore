@@ -1,6 +1,18 @@
+# Ignore Node.js modules
+node_modules/
+
+# Ignore Docker files
+Dockerfile
+.dockerignore
+
+# Ignore Git-related files
+.git/
+
+# Ignore specific .env files in the same directory
 .env
 .env.example
 .env.local
 .env.staging
+
 # Ignore all .env files in any directory
 /*.env
