@@ -5,11 +5,13 @@ async function getAll() {
   return await User.findAll();
 }
 
-async function createUser(userData) {
-  const user = userData;
-  const salt = await bcrypt.genSalt(10);
-  user.password = await bcrypt.hash(user.password, salt);
-  return await User.create(user);
+async function updateUserById(id, user) {
+  if (user.password) {
+    const salt = await bcrypt.genSalt(10);
+    user.password = await bcrypt.hash(user.password, salt);
+  }
+  const user = User.update(user, { where: { id: id } }, { new: true });
+  return getUserById(id);
 }
 
 async function getUserById(id) {
